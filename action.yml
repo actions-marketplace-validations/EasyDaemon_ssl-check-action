@@ -1,0 +1,35 @@
+name: 'SSL Certificate Check'
+description: 'Check SSL certificates for multiple domains in GitHub workflows using SSL Bulk Status API'
+author: 'EasyDaemon'
+
+branding:
+  icon: 'shield'
+  color: 'green'
+
+inputs:
+  api_key:
+    description: 'SSL Bulk Status API key'
+    required: true
+  domains:
+    description: 'Domains to check (one per line or comma-separated)'
+    required: true
+  fail_on_warning:
+    description: 'Fail the workflow if certificate expires in < 14 days'
+    required: false
+    default: 'false'
+  fail_on_critical:
+    description: 'Fail the workflow if certificate is expired or invalid'
+    required: false
+    default: 'true'
+
+outputs:
+  results:
+    description: 'JSON results from SSL check'
+  critical_count:
+    description: 'Number of critical issues found'
+  warning_count:
+    description: 'Number of warnings found'
+
+runs:
+  using: 'node20'
+  main: 'index.js'

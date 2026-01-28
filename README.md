@@ -25,7 +25,7 @@ curl -X POST https://ssl.easydmn.com/create-free-key
 - Pro: €10/month (5,000 checks)
 - Pro+: €25/month (50,000 checks)
 
-Get your key at [ssl.easydmn.com](https://ssl.easydmn.com)
+Learn more: [SSL Bulk Status API](https://easydmn.com)
 
 ## Inputs
 
